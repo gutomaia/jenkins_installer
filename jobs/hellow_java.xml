@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven2-moduleset>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty>
+      <projectUrl>http://github.com/gutomaia/hellow_java/</projectUrl>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>1</configVersion>
+    <remoteRepositories>
+      <org.spearce.jgit.transport.RemoteConfig>
+        <string>origin</string>
+        <int>5</int>
+        <string>fetch</string>
+        <string>+refs/heads/*:refs/remotes/origin/*</string>
+        <string>receivepack</string>
+        <string>git-upload-pack</string>
+        <string>uploadpack</string>
+        <string>git-upload-pack</string>
+        <string>url</string>
+        <string>git://github.com/gutomaia/hellow_java.git</string>
+        <string>tagopt</string>
+        <string></string>
+      </org.spearce.jgit.transport.RemoteConfig>
+    </remoteRepositories>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>**</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <mergeOptions/>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <clean>false</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir></relativeTargetDir>
+    <excludedRegions></excludedRegions>
+    <excludedUsers></excludedUsers>
+    <skipTag>false</skipTag>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers class="vector">
+    <hudson.triggers.SCMTrigger>
+      <spec>5 * * * *</spec>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>true</concurrentBuild>
+  <rootModule>
+    <groupId>net.guto.hellow</groupId>
+    <artifactId>hellowJava</artifactId>
+  </rootModule>
+  <goals>integration-test site</goals>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
+  <incrementalBuild>false</incrementalBuild>
+  <usePrivateRepository>false</usePrivateRepository>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <archivingDisabled>false</archivingDisabled>
+  <resolveDependencies>false</resolveDependencies>
+  <processPlugins>false</processPlugins>
+  <mavenValidationLevel>-1</mavenValidationLevel>
+  <reporters/>
+  <publishers>
+    <hudson.plugins.warnings.WarningsPublisher>
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <thresholdLimit>low</thresholdLimit>
+      <pluginName>[WARNINGS] </pluginName>
+      <defaultEncoding></defaultEncoding>
+      <canRunOnFailed>false</canRunOnFailed>
+      <useDeltaValues>false</useDeltaValues>
+      <thresholds>
+        <unstableTotalAll></unstableTotalAll>
+        <unstableTotalHigh></unstableTotalHigh>
+        <unstableTotalNormal></unstableTotalNormal>
+        <unstableTotalLow></unstableTotalLow>
+        <unstableNewAll></unstableNewAll>
+        <unstableNewHigh></unstableNewHigh>
+        <unstableNewNormal></unstableNewNormal>
+        <unstableNewLow></unstableNewLow>
+        <failedTotalAll></failedTotalAll>
+        <failedTotalHigh></failedTotalHigh>
+        <failedTotalNormal></failedTotalNormal>
+        <failedTotalLow></failedTotalLow>
+        <failedNewAll></failedNewAll>
+        <failedNewHigh></failedNewHigh>
+        <failedNewNormal></failedNewNormal>
+        <failedNewLow></failedNewLow>
+      </thresholds>
+      <shouldDetectModules>false</shouldDetectModules>
+      <pattern></pattern>
+      <parserNames>
+        <string>Java Compiler</string>
+      </parserNames>
+      <ignoreConsole>false</ignoreConsole>
+    </hudson.plugins.warnings.WarningsPublisher>
+    <hudson.plugins.chucknorris.CordellWalkerRecorder>
+      <factGenerator/>
+    </hudson.plugins.chucknorris.CordellWalkerRecorder>
+  </publishers>
+  <buildWrappers/>
+</maven2-moduleset>
