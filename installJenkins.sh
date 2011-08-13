@@ -24,6 +24,7 @@ do
 		if [ ! -f deps/$PLUGIN_NAME.hpi ]
 		then 
 			PLUGIN_VERSION=$(cat $PLUGIN)
+			PLUGIN_VERSION='latest'
 			wget -nv $JENKINS_REPOSOTORY/plugins/$PLUGIN_NAME/$PLUGIN_VERSION/$PLUGIN_NAME.hpi -O deps/$PLUGIN_NAME.hpi
 		fi
 	fi
@@ -58,7 +59,11 @@ cp config/* ~/.hudson/
 tar xfz deps/jetty-distribution-$JETTY_VERSION.tar.gz
 
 rm -rf jetty-distribution-$JETTY_VERSION/contexts/*
+rm -rf jetty-distribution-$JETTY_VERSION/webapps/*
+
 cp jenkins.xml jetty-distribution-$JETTY_VERSION/contexts/
+
 cp deps/jenkins.war jetty-distribution-$JETTY_VERSION/webapps/
+
 
 mv jetty-distribution-$JETTY_VERSION jetty

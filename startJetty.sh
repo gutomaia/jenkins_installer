@@ -2,4 +2,4 @@
 #cd jetty-distribution-$JETTY_VERSION
 cd jetty
 
-java -jar start.jar
+nohup java -jar start.jar &
