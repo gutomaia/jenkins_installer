@@ -56,7 +56,7 @@
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-phpcs -s -p --report=checkstyle --report-file=&quot;${WORKSPACE}/checkstyle.xml&quot; --standard=Zend --ignore=docs/ ${WORKSPACE}
+phpcs -s -p --report=checkstyle --report-file=&quot;${WORKSPACE}/checkstyle.xml&quot; --standard=Zend --ignore=docs/ --extensions=php ${WORKSPACE}
 echo &quot;done phpcs&quot;</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
